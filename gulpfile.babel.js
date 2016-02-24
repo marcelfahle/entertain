@@ -4,6 +4,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
+import rsync from 'gulp-rsync';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -164,4 +165,16 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
+});
+
+gulp.task('deploy', ['build'], () => {
+  return gulp.src('dist/**')
+    .pipe(rsync({
+      root: 'dist',
+      username:'deployer',
+      hostname: 'gedankenwerk-hosting.com',
+      progress: true,
+      exclude: ['.DS_Store'],
+      destination: '/home/deployer/apps/entertain/public_html'
+    }));
 });

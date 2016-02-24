@@ -1,0 +1,372 @@
+@import 'colors';
+@import 'brand-settings';
+@import 'brand-fonts';
+
+.sr-only {
+  display: none;
+}
+.btn:focus {
+  color: #383838;
+  text-decoration: none;
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.icon {
+  font-family: teleiconoutline;
+  position: relative;
+  bottom: 1px;
+  vertical-align: middle;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none!important;
+  -webkit-font-smoothing: antialiased;
+}
+.dtx {
+  header {
+    border-bottom: 1px solid #ededed;
+    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    .brand-wrapper {
+      height: $bu * 7;
+      background: $magenta;
+      width: 100%;
+      //padding: 0 $bu*2;
+      padding: 0;
+      position: relative;
+
+      // -webkit-transition: height 0.3s;
+      // -moz-transition: height 0.3s;
+      // -ms-transition: height 0.3s;
+      // -o-transition: height 0.3s;
+      // transition: height 0.3s;
+
+      .brand-bar {
+        
+        
+        //padding: 0 $bu;
+        h1, h2 {
+          margin: 0;
+          padding: 0;
+          
+        }
+        h1 {
+          background: transparent url('../images/T_Logo_n_XXHDPI_3BU.png') no-repeat;
+          height: $bu *3;
+          width: 100px;
+          background-size: auto $bu * 3;
+          margin-top: $bu * 2;
+          text-indent: -9999em;
+          display:  inline-block;
+        }
+        h2 {
+          color: #fff;
+          float: right;
+          width: auto;
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          height: $bu;
+          line-height: $bu;
+          margin-top: $bu*3.4;
+          font-family: 'TeleGroteskScreen';
+          font-weight: 800;
+          text-transform: uppercase;
+
+       
+        }  
+      }
+    } 
+    .brand-wrapper.minimized {
+      height: $bu * 1;
+      position: fixed;
+      top: 0;
+      
+      overflow: hidden;
+      z-index: 4000;
+      + .nav-container {
+        margin-top: $bu * 7;  
+      }
+    }
+    
+  }
+
+  .nav-container {
+    height: $bu*6;
+
+    
+    .tb-menu-btn {
+      width: 35px;
+      height: 35px;
+      .icon-list-view:before {
+        content: '\3d';
+      }
+    }
+
+    .navbar-btn {
+      float: left;
+      margin-top: 18px;
+      padding: 4px 6px;
+      font-size: 21px;
+      margin-right: 6px;
+      margin-left: 6px;
+      position: relative;
+    }
+
+    .btn-clean {
+      color: #383838;
+      background-color: #fff;
+      border-color: transparent;
+      background-image: none;
+    }
+    .btn-clean:hover {
+      color: #383838;
+      background-color: #ededed;
+      border-color: transparent;
+    }
+    .btn-clean:active {
+      color: #383838;
+      background-color: #d9d9d9;
+      border-color: transparent;
+    }
+    .icon-list-view {
+      display: none;
+    }
+    .collapsed .icon-list-view {
+      display: block;
+    }
+    .collapsed .icon-cancel {
+      display: none;
+    }
+    .icon-cancel:before {
+      content: '\58';
+    }  
+  }
+  nav > ul:first-child {
+    //display: none;
+    //border: 1px solid red;
+    //position: absolute;
+    //display: block;
+    //width: 100%;
+    //min-height: 100%;
+    //z-index: 1000;
+    //background: #fff;
+    //margin: 0;
+    //margin-top: 20px;
+    //margin-top: 73px;
+    //border-bottom: 1px solid red;
+    //border-bottom: 1px solid #ededed;
+    //margin-left: -20px;
+    //padding-left: 20px;
+    // >li {
+    //   //margin-bottom: 20px;
+    //   height: $bu*6;
+    //   margin: 0;
+    //   //padding-left: $bu*2;
+    //   a {
+    //     line-height: $bu*6;
+    //     margin: 0;
+    //   }
+    // }
+    
+  }
+  .collapsed + nav > ul:first-child {
+    display: none;
+  }
+  
+  nav {
+    // all lists
+    ul {
+      list-style:none;
+    }
+
+    // all first level lists
+    >ul {
+      background: #fff;
+      list-style: none;
+      margin: 0;
+      li {
+        padding-left: 0;
+        //cursor: pointer; cursor: hand;
+        a {
+          font-size: $bu*1.75;
+          line-height: $bu*1.75;
+          padding-left: $bu*2;
+          display: block;
+          color: #383838;
+          text-decoration: none;
+
+          
+          .icon {
+            width: $bu*2;
+            font-size: 24px;
+          }
+          .icon.user {
+            display: inline-block;
+            text-align: center;
+            text-indent: -9999em;
+          }
+        }
+        a:hover {
+          background: #ededed;
+        }
+        a:active {
+          background: #d9d9d9;
+        }
+        a.active {
+          color: $magenta;
+        }
+        // force border around single link (used for lang switch)
+        a.border {
+          border: 1px solid #dcdcdc;
+          border-radius: 4px;
+        }
+        
+        
+      }
+      // TEMP
+      li.features_link {
+        display: none;
+      }
+      
+      // > ul {
+      //   display: inline-block;
+      // }
+
+
+     
+    }
+
+    
+
+  }
+  nav.small-nav, footer nav {
+    // all lists
+    height: 72px;
+    text-align: right;
+
+    // all first level lists
+    .helper {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    img {
+      vertical-align: middle;
+      cursor: pointer;
+      
+    }
+    ul {
+      display: none;
+      background: #fff;
+      list-style: none;
+      margin: 0;
+      li {
+        padding-left: 0;
+        
+        a {
+          font-size: $bu*1.0833333;
+          line-height: $bu*6;
+          padding-left: $bu*2;
+          text-transform: uppercase;
+          color: #757575;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+
+
+
+/**
+ * 16.4 Desktop Small 955px
+ *
+ * DESKTOP NAVI STARTS HERE
+ */
+@media screen and (min-width: 59.6875em) {
+  .dtx {
+
+    .tb-menu-btn {
+      display: none;
+    }
+
+
+
+
+    .collapsed + nav, nav, nav.small-nav, footer nav {
+      height: $bu*6;
+      padding-bottom: 1px;
+      float: right;
+      display: block;
+      text-align: right;
+      .helper, .helper + img {
+        display: none;
+        float: right;
+      }
+      // first list = main menu
+      > ul {
+        //pointer-events: none;
+        //display: inline-block;
+        //width: auto;
+
+        z-index: 1000;
+        background: transparent;
+        margin-top: 0;
+        height: $bu*6;
+        display: table;
+        li {
+          pointer-events: auto;
+          display: table-cell;
+          vertical-align: middle;
+
+          
+        }
+        // first element has little left padding
+        > li:first-child {
+          //padding-left: 4px;
+        }
+        // line height reset from mobile
+        > li a {
+          border-right: 1px solid #6C6C6C;
+          padding-right: 15px;
+          padding-left: 15px;
+          line-height: normal;
+        }
+        > li:last-child a {
+          border: none;
+          padding-right: 0;
+        }
+      }
+      
+
+    }
+
+
+  }
+}
+
+
+
+
+
+
+
+
+
+

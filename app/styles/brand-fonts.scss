@@ -1,0 +1,44 @@
+@encoding "UTF-8";
+
+// FONTS
+@font-face {
+  font-family: 'TeleIconUi';
+  src: url("../fonts/teleicon-ui.eot");
+  src: url("../fonts/teleicon-ui.eot?#iefix") format("embedded-opentype"), url("../fonts/teleicon-ui.woff") format("woff"), url("../fonts/teleicon-ui.ttf") format("truetype"), url("../fonts/teleicon-ui.svg#teleicon-ui") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'TeleIconUi';
+    src: url("../fonts/teleicon-ui.svg#teleicon-ui") format("svg");
+  }
+}
+@font-face {
+  font-family: "TeleGrotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/telegrotesk-normal.eot?#iefix");
+  src: url("../fonts/telegrotesk-normal.eot?#iefix") format("eot"), url("../fonts/telegrotesk-normal.woff") format("woff"), url("../fonts/telegrotesk-normal.ttf") format("truetype"), url("../fonts/telegrotesk-normal.svg#telegrotesk-normal") format("svg");
+}
+@font-face {
+  font-family: "TeleGrotesk";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/telegrotesk-halbfett.eot?#iefix");
+  src: url("../fonts/telegrotesk-halbfett.eot?#iefix") format("eot"), url("../fonts/telegrotesk-halbfett.woff") format("woff"), url("../fonts/telegrotesk-halbfett.ttf") format("truetype"), url("../fonts/telegrotesk-halbfett.svg#telegrotesk-halbfett") format("svg");
+}
+@font-face {
+  font-family: "TeleGrotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/telegrotesk-fett.eot?#iefix");
+  src: url("../fonts/telegrotesk-fett.eot?#iefix") format("eot"), url("../fonts/telegrotesk-fett.woff") format("woff"), url("../fonts/telegrotesk-fett.ttf") format("truetype"), url("../fonts/telegrotesk-fett.svg#telegrotesk-fett") format("svg");
+}
+@font-face {
+  font-family: "TeleGroteskScreen";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/telegrotesk-ultra.eot?#iefix");
+  src: url("../fonts/telegrotesk-ultra.eot?#iefix") format("eot"), url("../fonts/telegrotesk-ultra.woff") format("woff"), url("../fonts/telegrotesk-ultra.ttf") format("truetype"), url("../fonts/telegrotesk-ultra.svg#telegrotesk-ultra") format("svg");
+}

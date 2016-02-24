@@ -1,0 +1,73 @@
+
+.dtx .button.flat, .dtx .button.flat.unavailable, .dtx .button.flat.unavailable:hover, .dtx .button.flat.unavailable:focus, .dtx .button.flat.unavailable.hover, .dtx .button.flat.unavailable:active, .dtx .button.flat.unavailable.active {
+    color: #383838;
+    background-color: #ededed;
+    border-color: #b2b2b2;
+    background-image: none;
+    text-shadow: none;
+}
+
+.dtx .button, .dtx .button.unavailable:active, .dtx .button.unavailable.active, .dtx .button.beveled, .dtx .button.beveled.unavailable:active, .dtx .button.beveled.unavailable.active {
+    -webkit-box-shadow: white 0 1px 0 0;
+    -moz-box-shadow: white 0 1px 0 0;
+    box-shadow: white 0 1px 0 0;
+}
+
+.dtx .button, .dtx .button.unavailable, .dtx .button.unavailable:hover, .dtx .button.unavailable:focus, .dtx .button.unavailable.hover, .dtx .button.unavailable:active, .dtx .button.unavailable.active {
+    color: #383838;
+    border-color: #b2b2b2;
+    background-color: #f3f3f3;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #f3f3f3), color-stop(100%, #e6e6e6));
+    background: -webkit-linear-gradient(#ffffff, #f3f3f3 50%, #e6e6e6);
+    background: -moz-linear-gradient(#ffffff, #f3f3f3 50%, #e6e6e6);
+    background: -o-linear-gradient(#ffffff, #f3f3f3 50%, #e6e6e6);
+    background: linear-gradient(#ffffff, #f3f3f3 50%, #e6e6e6);
+}
+
+.dtx .button {
+    height: 1.875em;
+    font-size: 1.6em;
+    line-height: 1.875em;
+    display: inline-block;
+    padding: 0em 1.25em;
+    font-family: TeleGrotesk;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-border-radius: 0.20833em;
+    -moz-border-radius: 0.20833em;
+    -ms-border-radius: 0.20833em;
+    -o-border-radius: 0.20833em;
+    border-radius: 0.20833em;
+    text-shadow: white 0px 1px 0;
+}
+
+.dtx .button, .dtx .button.small, .dtx .button.large, .dtx .checkboxwrap .checkbox, .dtx .toolbar > li button, .dtx .toolbar > li .button, .dtx .toolbar.default > li button, .dtx .toolbar.default > li .button, .dtx menu[type=toolbar] > li button, .dtx menu[type=toolbar] > li .button, .dtx menu[type=toolbar].default > li button, .dtx menu[type=toolbar].default > li .button, .dtx .toolbar.large > li button, .dtx .toolbar.large > li .button, .dtx menu[type=toolbar].large > li button, .dtx menu[type=toolbar].large > li .button {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.dtx .button, .dtx .button.small, .dtx .button.large, .dtx .checkboxwrap .checkbox, .dtx .ui-selectmenu, .dtx input[type="text"], .dtx input[type="password"], .dtx input[type="email"], .dtx input[type="url"], .dtx textarea, .dtx table.table-decorated, .dtx table.table-decorated thead, .dtx table.table-decorated thead th, .dtx table.table-decorated tbody tr, .dtx .headline, .dtx h1, .dtx h2, .dtx h3, .dtx h4, .dtx h5, .dtx h6, .dtx legend, .dtx .headlinewrap, .dtx .toolbar, .dtx menu[type=toolbar], .dtx .toolbar > li button, .dtx .toolbar > li .button, .dtx .toolbar.default > li button, .dtx .toolbar.default > li .button, .dtx menu[type=toolbar] > li button, .dtx menu[type=toolbar] > li .button, .dtx menu[type=toolbar].default > li button, .dtx menu[type=toolbar].default > li .button, .dtx .toolbar.large > li button, .dtx .toolbar.large > li .button, .dtx menu[type=toolbar].large > li button, .dtx menu[type=toolbar].large > li .button, .dtx .toolbar-container, .dtx ul.list-decorated li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dtx .button.flat:hover, .dtx .button.flat:focus {
+    background-image: none;
+    background-color: #dbdbdb;
+    border-color: #a1a1a1;
+}
+
+a {
+    color: #0090c4;
+    text-decoration: none;
+}
+
+a {
+    color: #0088cc;
+    text-decoration: none;
+}
