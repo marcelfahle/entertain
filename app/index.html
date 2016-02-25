@@ -48,23 +48,139 @@
       </div>
     </header>
 
-    <section id="welcome">
-      <div class="hero-unit">
-        <div>
-          <h2>Willkommen bei der Entertain Installations & Verkabelungs Hilfe.</h2>
-          <p>Wir begleiten Sie Schritt für Schritt durch die Einrichtung Ihres Entertain Paketes.</p>
-          <p>
-            <a href="#" class="button flat">Start</a>
-          </p>  
-        </div>  
-      </div>  
-    </section>
 
-    <!-- <section>
+    <main>
       
-    </section> -->
     
+
+
+      <section id="welcome">
+        <div class="hero-unit">
+          <div>
+            <h2>Willkommen bei der Entertain Installations & Verkabelungs Hilfe.</h2>
+            <p>Wir begleiten Sie Schritt für Schritt durch die Einrichtung Ihres Entertain Paketes.</p>
+            <p>
+              <a href="#" id="start-query" class="button flat">Start</a>
+            </p>  
+          </div>  
+        </div>  
+      </section>
+
+
+
+      <!-- QUERY 440 / 270 -->
+      <section id="query">
+        <div class="query" id="query1">
+          <h2>Wie empfangen Sie Entertain?</h2>
+          
+          <div class="box" id="q1-1" data-q="1" data-o="1">
+            <div>
+              <img src="images/TAE@2x.png" width="99" alt="">
+            </div>
+            <p>
+              Entertain über die Internetleitung empfangen.
+            </p>
+            <a href="#" class="answer button flat" title="Internet">Internet</a>  
+            
+            
+          </div>
+          
+          <div class="box" id="q1-2" data-q="1" data-o="2">
+            <div>
+              <img src="images/sat-dish@2x.png" width="131" alt="">
+            </div>
+            <p>
+              Bei Entertain Sat wird das TV- und Radiosignal, 
+              dass Sie über Satellit empfangen, mit IP Zusatzdiensten 
+              kombiniert.
+            </p>
+            <a href="#" class="answer button flat" title="Satellit">Satellit</a>  
+            
+            
+          </div>
+        </div>
+        
+
+
+        <div class="query" id="query2">
+        <h2>Nutzen Sie IP-Telefonie?</h2>
+          <div class="box" id="q2-1">
+            <div>
+              <img src="images/IP-Telefonie@2x.png" alt="" width="205">
+            </div>
+            <p>
+              Bei der IP-Telefonie wird das Gespräch in 
+              Form von digitalen Datenpaketen über die Internetleitung
+              übertragen.
+            </p>
+            <a href="#" class="answer button flat" title="Ja">Ja</a>  
+          </div>
+
+          <div class="box" id="q2-2">
+            <div>
+              <img src="images/Analog-Telefonie@2x.png" alt="" width="205">
+            </div>
+            <p>
+              Beim Standard-Anschluss wird das Gespräch konventionell 
+              über die analoge Telefonleitung übertragen.
+            </p>
+            <a href="#" class="answer button flat" title="Nein">Nein</a>  
+          </div>
+        </div>
+        
+
+
+        <div class="query" id="query3">
+          <h2>Wie verbinden Sie den Media Receiver mit dem Speedport Router?</h2>
+          <div class="box" id="q3-1">
+            <div>
+              <img src="images/Kabel@2x.png" alt="" width="165">
+            </div>
+            <p>
+              Nutzung des beiliegenden 10 Meter langen 
+              Netzwerkkabel des Media Receivers. Dies ist 
+              die optimalste Verbindung zwischen Router und 
+              Media Receiver.
+            </p>
+            <a href="#" class="answer button flat" title="Kabel Direktverbindung">Kabel Direktverbindung</a> 
+          </div>
+
+          <div class="box" id="q3-2">
+            <div>
+              <img src="images/LAN-Dose@2x.png" alt="" width="96">
+            </div>
+            <p>
+              Müssen mehr als 10 Meter überbrückt werden, ist eine feste
+              Verkabelung die zuverlässigste Verbindung. Auf Wunsch bringen 
+              wir bei Ihnen zu Hause LAN-Dosen an und verlegen das
+              LAN-Kabel.
+            </p>
+            <a href="#" class="answer button flat" title="Heimnetz">Heimnetz</a>
+          </div>
+
+          <div class="box" id="q3-3">
+            <div>
+              <img src="images/Powerline@2x.png" alt="" width="172">
+            </div>
+            <p>
+              Ist eine Kabelverlegung nicht möglich, benötigen
+              Sie ein <a href="#" title="Powerline-Set">Powerline-Set</a>.
+              Damit verbinden Sie Ihren WLAN-Router über
+              das Stromnetz mit Ihrem Media Receiver.
+            </p>
+            <a href="#" class="answer button flat" title="Powerline-Adapter">Powerline-Adapter</a>
+          </div>
+        </div>
+
+
+        <div class="status-indicator-wrapper">
+        </div>
+      </section>
+      <!-- QUERY - end -->
     
+    </main>
+
+
     <footer>
       <div class="container-fluid">
         <div class="copyright">
@@ -84,6 +200,8 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/velocity/velocity.js"></script>
+    <script src="/bower_components/velocity/velocity.ui.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

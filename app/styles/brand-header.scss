@@ -248,6 +248,7 @@
     // all lists
     height: 72px;
     text-align: right;
+    text-align: left;
 
     // all first level lists
     .helper {
@@ -267,13 +268,52 @@
       margin: 0;
       li {
         padding-left: 0;
-        
+        display: table-cell;
         a {
           font-size: $bu*1.0833333;
           line-height: $bu*6;
           padding-left: $bu*2;
           text-transform: uppercase;
           color: #757575;
+        }
+      }
+    }
+  }
+  footer nav {
+    ul {
+      display: table;
+      li {
+        display: table-cell;
+        vertical-align: middle;
+        height: 72px;
+        a {
+          border-right: none;
+          padding-right: 15px;
+          padding-left: 15px;
+          line-height: 36px;
+
+        }
+      }
+    }
+    @media screen and (min-width: 40em) {
+      ul {
+        display: table;
+        li {
+          display: table-cell;
+          vertical-align: middle;
+          height: 72px;
+          a {
+            border-right: 1px solid #6C6C6C;
+            padding-right: 15px;
+            padding-left: 15px;
+            line-height: normal;
+
+          }
+        }
+        li:last-child {
+          a {
+            border: none;
+          }
         }
       }
     }
