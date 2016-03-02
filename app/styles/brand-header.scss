@@ -246,42 +246,70 @@
   }
   nav.small-nav, footer nav {
     // all lists
+    position: relative;
     height: 72px;
     text-align: right;
     text-align: left;
 
-    // all first level lists
-    .helper {
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-    }
-    img {
+    .small-menu-trigger {
+      display: block;
       vertical-align: middle;
       cursor: pointer;
-      
+      position: absolute;
+      top: 29px;
+      right: 0;
+      img.img-cancel { display: none; }
     }
     ul {
-      display: none;
+
       background: #fff;
       list-style: none;
       margin: 0;
+      //
+      display: none;
+      
+      //border: 1px solid red;
+      // MOBILE ONLY
+      padding-top: 20px;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 1000;
+      padding-top: 20px;
+      top: 73px;
+
       li {
         padding-left: 0;
-        display: table-cell;
+        //display: table-cell;
+
         a {
           font-size: $bu*1.0833333;
-          line-height: $bu*6;
-          padding-left: $bu*2;
+          font-family: 'TeleGrotesk';
+          font-weight: 400;
+          letter-spacing: .8;
+          //line-height: $bu*6;
+          line-height: $bu*3;
+          font-size: $bu*1.3;
+          //padding-left: $bu*2;
           text-transform: uppercase;
           color: #757575;
         }
       }
     }
   }
+  nav.small-nav.show {
+    .small-menu-trigger {
+      img.img-menu { display: none; }
+      img.img-cancel { display: inline; }
+    }
+  }
   footer nav {
     ul {
       display: table;
+      height: auto;
+      position: relative;
+      top: auto;
+      padding-top: 0;
       li {
         display: table-cell;
         vertical-align: middle;
@@ -295,7 +323,11 @@
         }
       }
     }
-    @media screen and (min-width: 40em) {
+  }
+  @media screen and (min-width: 40em) {
+
+    footer nav {
+      
       ul {
         display: table;
         li {
@@ -304,6 +336,7 @@
           height: 72px;
           a {
             border-right: 1px solid #6C6C6C;
+            font-size: $bu*1.0833333;
             padding-right: 15px;
             padding-left: 15px;
             line-height: normal;
@@ -318,6 +351,7 @@
       }
     }
   }
+  
 }
 
 
@@ -347,7 +381,31 @@
     }
 
 
-
+    nav.small-nav {
+      height: $bu*6;
+      padding-bottom: 1px;
+      float: right;
+      display: block;
+      text-align: right;
+      .small-menu-trigger {
+        display: none;
+      }
+      ul {
+        // MOBILE ONLY
+        padding-top: 0;
+        position: relative;
+        width: auto;
+        height: auto;
+        z-index: 1000;
+        
+        top: auto;
+        li {
+          a {
+            font-size: $bu*1.0833333;
+          }
+        }
+      }
+    }
 
     .collapsed + nav, nav, nav.small-nav, footer nav {
       height: $bu*6;

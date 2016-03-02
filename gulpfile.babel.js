@@ -5,6 +5,7 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
 import rsync from 'gulp-rsync';
+import cache from 'gulp-cache';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -177,4 +178,8 @@ gulp.task('deploy', ['build'], () => {
       exclude: ['.DS_Store'],
       destination: '/home/deployer/apps/entertain/public_html'
     }));
+});
+
+gulp.task('clear', function (done) {
+  return cache.clearAll(done);
 });
