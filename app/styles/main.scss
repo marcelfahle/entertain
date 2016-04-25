@@ -278,6 +278,54 @@ main {
 #result {
   display: none;
   padding-top: 10px;
+
+  .subcats {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    li {
+      display: inline;
+      border-bottom: 4px solid #ededed;
+      margin-right: 5px;
+      padding-bottom: 6px;
+      padding-left: 2px;
+      padding-right: 2px;
+      a {
+        font-size: 0.8em;
+      }
+      a:link, a:visited {
+        color: #757575;
+      }
+      a:hover, a:active {
+        color: #383838;
+      }
+    }
+    li.active {
+      border-bottom: 4px solid #e20074;
+      a {
+        color: #383838;
+      }
+    }
+
+    @media screen and (min-width: 23.750em) {
+      
+    }
+
+    @media screen and (min-width: 36.250em) {
+      padding-left: 22px;
+      li {
+        margin-right: 9px;
+        padding-left: 4px;
+        padding-right: 4px;
+        a {
+          font-size: 1.125em;
+        }
+      }
+
+    }
+  }
+
   .overview {
     h2 {
       display: none;

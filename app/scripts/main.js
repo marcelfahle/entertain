@@ -19,6 +19,14 @@ $(document).ready(function() {
     $('#query1 .box').velocity('transition.flipXIn', { stagger: 150, delay: 350, duration: 350, display: '' });
   }
 
+  $('.subcats li a').on('click', function(e) {
+    e.preventDefault();
+    $('.subcats li').removeClass('active');
+    $(this).parent().addClass('active');
+  });
+
+
+
   function gotoNextQuestion(trigger) {
     var $current = $(trigger).closest('.query');
     var $next = $current.next();
