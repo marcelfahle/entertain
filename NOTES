@@ -1,0 +1,65 @@
+
+// SIZE CHANGE:
+990 -  720 ??%   / 425
+800 - 650  ??%   / 375
+
+760 MOBIL??
+
+mobile overview native 315 
+mobile others native 370
+
+
+// CONTENT:
+01 -Router anschließen
+02 - Computer anschließen
+03 - Telefon anschließen
+04 - (?) MEdia Receiver abschließen
+
+steps-04--05-receiver--NEED FIX
+
+
+
+// change log
+- hover in top nav
+- lower case to upper case letters
+- centering in big box numbers
+- hover state in top nav
+
+
+
+### Für Menüpunkte einen Underscore als Hover State verwenden.
+
+### Der Graue Unterstrich bei den Tabs ist nur als Hover State gedacht. Idle wäre ganz ohne.
+
+### Hotspots in der Übersichtsgrafik sind noch nicht anklickbar.
+
+### Kachel 3: Headline "IP-Telefon anschließen" ändern zu "Telefon anschließen"
+
+### Internet / Kachel 5: Im Text Sat Media Receiver ändern zu Media Receiver 
+
+### Sat / LAN-Dose, Powerline-Adapter / Kachel 4: Grafik lädt nicht. (Drauf achten, dass sort auch der richtige Receiver auf der Grafik zu sehen ist—der mit dem Kartenschlitz auf der Rückseite)
+
+### Sat / LAN-Dose, Powerline-Adapter: Punkte in der Übersichtsgrafik sitzen noch falsch.
+
+
+### buttons ueber menu
+### hotspot fadeout 
+### abstaednde homepage
+### x button im menu auf win 10 edge
+### android andere browser android 6 chrome ??? 
+### android n / IE edge horizontale scrollbar
+### 10 px rechts und links in mobil
+### step down button rausnehmen
+
+
+Verlinkungen fehlen:
+### Telekom Hilfe & Service
+### Kontakt
+Telekom.de
+Impressum
+AGB
+Datenschutz
+
+
+
+

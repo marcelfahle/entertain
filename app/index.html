@@ -23,7 +23,7 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="dtx">
+  <body class="dtx" data-connect="internet" data-type="kabel">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -41,13 +41,13 @@
           <!-- <span class="helper"></span> -->
           <a href="#" class="small-menu-trigger">
             <img src="images/hamburger.svg" class="img-menu" alt="Menu" width="20">
-            <img src="images/cancel.svg" class="img-cancel" alt="Schließen" width="18">
+            <img src="images/cancel.svg" class="img-cancel" alt="Schließen" width="18" height="18">
           </a>
           
           <ul>
             <li><a href="/">Abfrage neu starten</a></li>
-            <li><a href="#">Telekom Hilfe & Service</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="http://www.telekom.de/hilfe-und-service" target="_blank">Telekom Hilfe & Service</a></li>
+            <li><a href="http://www.telekom.de/kontakt" target="_blank">Kontakt</a></li>
           </ul>
         </nav>
       </div>
@@ -56,6 +56,13 @@
 
     <main>
       
+
+    <section id="preloaderwrap">
+      <div id="progress">...</div>
+      <div id="progressbar">
+        <div class="bar"></div>
+      </div>
+    </section>
     
 
 
@@ -84,7 +91,7 @@
               <p>
                 Entertain über die Internetleitung empfangen.
               </p>
-              <a href="#" class="answer button flat" title="Internet">Internet</a>  
+              <a href="#" class="answer button flat" data-a="internet" title="Internet">Internet</a>  
               
               
             </div>
@@ -96,7 +103,7 @@
               <p>
                 Entertain über Satellit empfangen.
               </p>
-              <a href="#" class="answer button flat" title="Satellit">Satellit</a>  
+              <a href="#" class="answer button flat" data-a="satellit" title="Satellit">Satellit</a>  
             </div>
           </div>
 
@@ -114,30 +121,53 @@
 
 
       <!-- RESULT -->
-      <section id="result">
+      <section id="result" class="">
         <!-- OVERVIEW -->
         <div class="container-fluid">
 
           <ul class="subcats">
-            <li class="active"><a href="#">Kabel Direktverbindung</a></li>
-            <li><a href="#">LAN-Dose</a></li>
-            <li><a href="#">Powerline-Adapter</a></li>
+            <li class="active"><a href="#" data-connect="kabel">Kabel Direktverbindung</a></li>
+            <li><a href="#" data-connect="lan">LAN-Dose</a></li>
+            <li><a href="#" data-connect="powerline">Powerline-Adapter</a></li>
           </ul>
 
 
           <div class="box overview">
-            <h2>Einrichtungsanleitung: Satelliten-Anlage, IP-Telefonie, Powerline-Adapter</h2>
-            <!--
-            <img src="images/uebersicht_sat_IP_powerline@2x.png" class="resp-full" alt="Einrichtungsanleitung: Satelliten-Anlage, IP-Telefonie, Powerline-Adapter" width="899">
-            <img src="images/uebersicht_sat_IP_powerline_mobile@2x.png" class="resp-small" alt="Einrichtungsanleitung: Satelliten-Anlage, IP-Telefonie, Powerline-Adapter" width="334">
-            //-->
+
+            <ul class="hotspots">
+              <li class="hs hs-step1"><a href=""></a></li>
+              <li class="hs hs-step2"><a href=""></a></li>
+              <li class="hs hs-step3"><a href=""></a></li>
+              <li class="hs hs-step4"><a href=""></a></li>
+              <li class="hs hs-step5"><a href=""></a></li>
+              <li class="hs hs-step6"><a href=""></a></li>
+            </ul>
+
+            <img class="internet-kabel-full internet kabel full" src="images/overview-internet-kabel-full.png" width="899" alt="">
+            <img class="internet-lan-full internet lan full" src="images/overview-internet-lan-full.png" width="899" alt="">
+            <img class="internet-powerline-full internet powerline full" src="images/overview-internet-powerline-full.png" width="899" alt="">
+
+            <img class="satellit-kabel-full satellit kabel full" src="images/overview-satellit-kabel-full.png" width="899" alt="">
+            <img class="satellit-lan-full satellit lan full" src="images/overview-satellit-lan-full.png" width="899" alt="">
+            <img class="satellit-powerline-full satellit powerline full" src="images/overview-satellit-powerline-full.png" width="899" alt="">
+
+            <img class="internet-kabel-mobile internet kabel mobile" src="images/overview-internet-kabel-mobile.png" width="315" alt="">
+            <img class="internet-lan-mobile internet lan mobile" src="images/overview-internet-lan-mobile.png" width="315" alt="">
+            <img class="internet-powerline-mobile internet powerline mobile" src="images/overview-internet-powerline-mobile.png" width="315" alt="">
+
+            <img class="satellit-kabel-mobile satellit kabel mobile" src="images/overview-satellit-kabel-mobile.png" width="315" alt="">
+            <img class="satellit-lan-mobile satellit lan mobile" src="images/overview-satellit-lan-mobile.png" width="315" alt="">
+            <img class="satellit-powerline-mobile satellit powerline mobile" src="images/overview-satellit-powerline-mobile.png" width="315" alt="">
+
           </div>
 
           <!-- STEP1 -->
           <div class="box step step1">
-            <h2>Router anschließen</h2>
-            <div class="img">
-              <img src="images/router_anschliessen@2x.png" alt="" width="347"/>
+            <h2 class="head-all">Router anschließen</h2>
+            <div class="img all ">
+              <img src="images/steps-01-00-router.png" class="full" alt="" width="545"/>
+
+              <img src="images/steps-mobile-01-00-router.png" class="mobile" alt="" width="370"/>
             </div>
             <div class="copy">
               <ol type="a">
@@ -156,9 +186,11 @@
 
           <!-- STEP 2 -->
           <div class="box step step1">
-            <h2>Computer anschließen</h2>
-            <div class="img">
-              <img src="images/computer_anschliessen@2x.png" alt="" width="523"/>
+            <h2 class="head-all">Computer anschließen</h2>
+            <div class="img all">
+              <img src="images/steps-02-00-computer.png" class="full" alt="" width="545"/>
+
+              <img src="images/steps-mobile-02-00-computer.png" class="mobile" alt="" width="370"/>
             </div>
             <div class="copy">
               <ol type="a">
@@ -171,7 +203,7 @@
                   einrichtungsunterlagen.
                 </li>
                 <li>
-                  Schließen sie das Netzteil an den Speedport Router 
+                  Schließen Sie das Netzteil an den Speedport Router 
                   und die Steckdose an.
                 </li>
               </ol>
@@ -181,22 +213,24 @@
 
           <!-- STEP 3 -->
           <div class="box step step1">
-            <h2>IP-Telefon anschließen</h2>
-            <div class="img">
-              <img src="images/IP-Telefonie_anschliessen@2x.png" alt="" width="523"/>
+            <h2 class="head-all">Telefon anschließen</h2>
+            <div class="img all">
+              <img src="images/steps-03-00-telefon.png" class="full" alt="" width="545"/>
+
+              <img src="images/steps-mobile-03-00-telefon.png" class="mobile" alt="" width="370"/>
             </div>
             <div class="copy">
               <ol type="a">
                 <li>
                   Schließen Sie Ihr Telefon an die Telefonbuchse
                   ("1" oder "2") des Speedport Routers an. Ein Faxgerät
-                  oder einen Anrufbeantworter können sie an die 
+                  oder einen Anrufbeantworter können Sie an die 
                   Buchse "2" anschließen.<br>
                   <br>
                   Sollten Sie ein Speedphone besitzen, können Sie
                   dieses ganz einfach mit der integrierten Funkbasis 
                   des Speedport Routers verbinden.
-                  Nähere Informationen finden sie in der 
+                  Nähere Informationen finden Sie in der 
                   Bedienungsanleitung des Speedphones.
                 </li>
                 <li>
@@ -214,60 +248,187 @@
 
           <!-- STEP 4 -->
           <div class="box step step4">
-            <h2>Sat Media Receiver mit Speedport Router verbinden</h2>
-            <div class="img">
-              <img src="images/Sat_Media_Receiver_mit_Speedport_Router_verbinden@2x.png" alt="" width="523"/>
+
+            <h2 class="head headf head-internet-kabel">Media Receiver mit Speedport Router verbinden</h2>
+            <h2 class="head headf head-internet-lan">Media Receiver über LAN-Dose mit Speedport Router verbinden</h2>
+            <h2 class="head headf head-internet-powerline">Media Receiver über Powerline mit Speedport Router verbinden</h2>
+            <h2 class="head headf head-satellit-kabel">Sat Media Receiver mit Speedport Router verbinden</h2>
+            <h2 class="head headf head-satellit-lan">Sat Media Receiver über LAN-Dose mit Speedport Router verbinden</h2>
+            <h2 class="head headf head-satellit-powerline">Sat Media Receiver über Powerline mit Speedport Router verbinden</h2>
+
+
+            <div class="img imgf img-internet-kabel-full">
+              <img src="images/steps-04--01-receiver.png" class="full" alt="" width="545"/>
+              <img src="images/steps-mobile-04--01-receiver.png" class="mobile" alt="" width="370"/>
             </div>
-            <div class="copy">
+            <div class="img imgf img-internet-lan-full">
+              <img src="images/steps-04--02-receiver.png" class="full" alt="" width="545"/>
+              <img src="images/steps-mobile-04--02-receiver.png" class="mobile" alt="" width="370"/>
+            </div>
+            <div class="img imgf img-internet-powerline-full">
+              <img src="images/steps-04--03-receiver.png" class="full" alt="" width="545"/>
+              <img src="images/steps-mobile-04--03-receiver.png" class="mobile" alt="" width="370"/>
+            </div>
+
+            <div class="img imgf img-satellit-kabel-full">
+              <img src="images/steps-04--04-receiver.png" class="full" alt="" width="545"/>
+              <img src="images/steps-mobile-04--04-receiver.png" class="mobile" alt="" width="370"/>
+            </div>
+            <div class="img imgf img-satellit-lan-full">
+              <img src="images/steps-04--05-receiver.png" class="full" alt="" width="545"/>
+              <img src="images/steps-mobile-04--05-receiver.png" class="mobile" alt="" width="370"/>
+            </div>
+            <div class="img imgf img-satellit-powerline-full">
+              <img src="images/steps-04--06-receiver.png" class="full" alt="" width="545"/>
+              <img src="images/steps-mobile-04--06-receiver.png" class="mobile" alt="" width="370"/>
+            </div>
+
+
+
+            <!-- copy: INTERNET KABEL //-->
+            <div class="copy copyf copy-internet-kabel">
               <p>
-                <strong>Wichtig:</strong> Schließen Sie Ihren Sat Media Receiver
-                erst an, wenn Sie den Speedport Router erfolgreich
-                eingerichtet haben.
+                <strong>Wichtig:</strong> 
+                Schließen Sie Ihren Media Receiver erst an, wenn eine Internetverbindung bestehet.
               </p>
               <ol type="a">
                 <li>
-                  Stecken Sie den ersten Powerline Adapter (A) in
-                  eine freie Steckdose in der Nähe des Speedport Routers
-                </li>
-                <li>
-                  Verbinden Sie den Speedport Router und den Powerline Adapter (A)
-                  mit einem LAN-Netzwerkkabel (gelb).
-                </li>
-                <li>
-                  Stecken Sie den zweiten Powerline Adapter (B)
-                  in eine freie Steckdose in der Nähe des Sat Media Receivers.
-                </li>
-                <li>
-                  Verbinden Sie den Sat Media Receiver und den Powerline Adapter
-                  (b) mit einem LAN-Netzwerkkabel (gelb).
+                  Verbinden Sie den Speedport Router und
+                  Media Receiver mit dem beiliegenden 10 Meter LAN-Kabel (gelb).
                 </li>
               </ol>  
             </div>
+            <!-- copy: INTERNET KABEL - end //-->
+            <!-- copy: INTERNET LAN //-->
+            <div class="copy copyf copy-internet-lan">
+              <p>
+                Mit unserem Service <a href="http://telekom.de" target="_blank">Installation Heimnetz</a> verlegt unser Service Techniker Kabel und LAN-Dosen nach Ihren Wünschen.
+                <br/><br/>
+                <strong>Wichtig:</strong> 
+                Schließen Sie Ihren Media Receiver erst an, wenn eine Internetverbindung besteht.
+              </p>
+              <ol type="a">
+                <li>
+                  Verbinden Sie den Speedport Router und
+                  die LAN-Dose (A) mit einem LAN-Netzwerkkabel (gelb).
+                </li>
+                <li>
+                  Verbinden Sie den Media Receiver und
+                  die LAN-Dose (B) mit einem LAN-Netzwerkkabel (gelb).
+                </li>
+              </ol>  
+            </div>
+            <!-- copy: INTERNET LAN - end //-->
+            <!-- copy: INTERNET POWERLINE //-->
+            <div class="copy copyf copy-internet-powerline">
+              <p>
+                <strong>Wichtig:</strong> 
+                Schließen Sie Ihren Media Receiver und Ihre <a href="http://www.devolo.de/dlan-powerline-adapter/" target="_blank">Powerline</a> erst an, wenn eine Internetverbindung besteht.
+              </p>
+              <ol type="a">
+                <li>
+                  Stecken Sie den ersten Powerline Adapter (A) in eine freie Steckdose in der Nähe des Speedport Routers.
+                </li>
+                <li>
+                  Verbinden Sie den Speedport Router und
+                  den Powerline Adapter (A) mit einem
+                  LAN-Netzwerkkabel (gelb).
+                </li>
+                <li>
+                  Stecken Sie den zweiten Powerline Adapter (B) in eine freie Steckdose in der Nähe des Media Receivers. 
+                </li>
+                <li>
+                  Verbinden Sie den Media Receiver und
+                  den Powerline Adapter (B) mit einem
+                  LAN-Netzwerkkabel (gelb).                
+                </li>
+              </ol>  
+            </div>
+            <!-- copy: INTERNET POWERLINE - end //-->
+            <!-- copy: SATELLIT KABEL //-->
+            <div class="copy copyf copy-satellit-kabel">
+              <p>
+                <strong>Wichtig:</strong> 
+                Schließen Sie Ihren Sat Media Receiver erst an, wenn eine Internetverbindung besteht.
+              </p>
+              <ol type="a">
+                <li>
+                  Verbinden Sie den Speedport Router und
+                  Sat Media Receiver mit dem beiliegenden 10 Meter LAN-Kabel (gelb).
+                </li>
+              </ol>  
+            </div>
+            <!-- copy: SATELLIT KABEL - end //-->
+            <!-- copy: SATELLIT LAN //-->
+            <div class="copy copyf copy-satellit-lan">
+              <p>
+                Mit unserem Service <a href="http://telekom.de" target="_blank">Installation Heimnetz</a> verlegt unser Service Techniker Kabel und LAN-Dosen nach Ihren Wünschen.
+                <br>
+                <br>
+                <strong>Wichtig:</strong> 
+                Schließen Sie Ihren Sat Media Receiver erst an, wenn eine Internetverbindung besteht.
+              </p>
+              <ol type="a">
+                <li>
+                  Verbinden Sie den Speedport Router und
+                  die LAN-Dose (A) mit einem LAN-Netzwerkkabel (gelb).
+                </li>
+                <li>
+                  Verbinden Sie den Sat Media Receiver und
+                  die LAN-Dose (B) mit einem LAN-Netzwerkkabel (gelb).
+                </li>
+              </ol>  
+            </div>
+            <!-- copy: SATELLIT LAN - end //-->
+            <!-- copy: SATELLIT POWERLINE //-->
+            <div class="copy copyf copy-satellit-powerline">
+              <p>
+                <strong>Wichtig:</strong> 
+                Schließen Sie Ihren Sat Media Receiver und Ihre <a href="http://www.devolo.de/dlan-powerline-adapter/" target="_blank">Powerline</a> erst an, wenn eine Internetverbindung besteht.
+              </p>
+              <ol type="a">
+                <li>
+                  Stecken Sie den ersten Powerline Adapter (A) in eine freie Steckdose in der Nähe des Speedport Routers.
+                </li>
+                <li>
+                  Verbinden Sie den Speedport Router und
+                  den Powerline Adapter (A) mit einem
+                  LAN-Netzwerkkabel (gelb).
+                </li>
+                <li>
+                  Stecken Sie den zweiten Powerline Adapter (B) in eine freie Steckdose in der Nähe des Sat Media Receivers. 
+                </li>
+                <li>
+                  Verbinden Sie den Sat Media Receiver und
+                  den Powerline Adapter (B) mit einem
+                  LAN-Netzwerkkabel (gelb).            
+                </li>
+              </ol>  
+            </div>
+            <!-- copy: SATELLIT POWERLINE - end //-->
             
           </div>
           <!-- STEP 4 -->
 
 
-           <!-- STEP 5 -->
-          <div class="box step step5">
+           <!-- STEP 5a SAT!! -->
+          <div class="box step step5 step5a">
             <h2>Sat Media Receiver mit Sat-Anlage verbinden</h2>
-            <div class="img">
-              <img src="images/Sat_Media_Receiver_mit_Sat-Anlage_verbinden@2x.png" alt="" width="417"/>
+
+            <div class="img imgf img-satellit-kabel-full img-satellit-lan-full img-satellit-powerline-full">
+              <img src="images/steps-05b--04-05-06-sat.png" class="full" width="545" />
+              <img src="images/steps-mobile-05b--04-05-06-sat.png" class="mobile" width="370" />
             </div>
+
             <div class="copy">
               
               <ol type="a">
                 <li>
-                  Verbinden Sie das mit einem LNB verbundene 
-                  Koaxialkabel mit dem Satellitensignal-Anschluss 
-                  LNB 1 des Sat MEdia Receivers. Bei Bedarf
-                  können Sie das Koaxialkabel eines zweiten 
-                  LNB an den Anschluss LNB 2 des Sat Media 
+                  Verbinden Sie das mit einem LNB verbundene Koaxialkabel mit dem Satellitensignal-Anschluss LNB 1 des Sat Media Receivers. Bei Bedarf können Sie das Koaxialkabel eines zweiten LNB an den Anschluss LNB 2 des Sat Media
                   Receivers anschließen.<br>
                   <br>
-                  Optional für hochaufgelöste HD+-TV-Programme
-                  schieben Sie die HD+-Karte in den Smartcard-Einschub
-                  des Sat Media Receivers.
+                  Optional für hochaufgelöste HD+-TV-Programme schieben Sie die HD+-Karte in den
+                  Smartcard-Einschub des Sat Media Receivers.
                 </li>
               </ol>  
             </div>
@@ -277,12 +438,34 @@
 
 
           <!-- STEP 6 -->
-          <div class="box step step6">
+          <div class="box step step6 step5b">
             <h2>Fernseher anschließen</h2>
-            <div class="img">
-              <img src="images/fernseher_anschliessen@2x.png" alt="" width="542"/>
+            <div class="img imgf img-internet-kabel-full img-internet-lan-full img-internet-powerline-full">
+              <img src="images/steps-05--01-02-03-fernseher.png" class="full" width="545" />
+              <img src="images/steps-mobile-05--01-02-03-fernseher.png" class="mobile" width="370" />
             </div>
-            <div class="copy">
+            <div class="img imgf img-satellit-kabel-full img-satellit-lan-full img-satellit-powerline-full">
+              <img src="images/steps-05--04-05-06-fernseher.png" class="full" width="545" />
+              <img src="images/steps-mobile-05--04-05-06-fernseher.png" class="mobile" width="370" />
+            </div>
+            <div class="copy copyf copy-internet-kabel copy-internet-lan copy-internet-powerline">
+              <ol type="a">
+                <li>
+                  Verbinden Sie den Media Receiver mit
+                  Ihrem Fernseher. Wenn Ihr Fernseher HD
+                  unterstützt, stecken Sie das HDML-Kabel in den
+                  Media Receiver und Ihren Fernseher.
+                  Unterstützt Ihr Fernseher kein HD, nutzen Sie
+                  das SCART-Kabel.
+                </li>
+                <li>
+                  Schließen Sie das Netzkabel an den Media 
+                  Receiver und an eine Steckdose an.
+                </li>
+              </ol>  
+
+            </div>
+            <div class="copy  copyf copy-satellit-kabel copy-satellit-lan copy-satellit-powerline">
               
               <ol type="a">
                 <li>
@@ -306,10 +489,6 @@
         </div> <!-- container-fluid end -->
 
         
-        <div class="stepper">
-          <a href="#" class="button flat">&darr;</a>
-        </div>
-
 
         
       </section>
@@ -324,10 +503,10 @@
         </div>
         <nav class="meta">
           <ul>
-            <li><a href="#">Telekom.de</a></li>
-            <li><a href="#">Impressum</a></li>
-            <li><a href="#">AGB</a></li>
-            <li><a href="#">Datenschutz</a></li>
+            <li><a href="http://www.telekom.de/" target="_blank">Telekom.de</a></li>
+            <li><a href="http://www.telekom.de/impressum" target="_blank">Impressum</a></li>
+            <li><a href="http://www.telekom.de/agb" target="_blank">AGB</a></li>
+            <li><a href="http://www.telekom.de/datenschutz" target="_blank">Datenschutz</a></li>
           </ul>
         </nav>
       </div>
@@ -338,6 +517,8 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/velocity/velocity.js"></script>
     <script src="/bower_components/velocity/velocity.ui.js"></script>
+    <script src="/bower_components/enquire/dist/enquire.min.js"></script>
+    <script src="/bower_components/PreloadJS/lib/preloadjs-0.6.2.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

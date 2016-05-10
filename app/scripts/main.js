@@ -1,8 +1,130 @@
 'use strict';
+/*global enquire, createjs */
 $(document).ready(function() {
+  //var currentOverview = 'internet-kabel-full';
   // function resetQuery() {
 
   // }
+  //
+  //
+  //
+  $('body').attr('data-s', 'mobile');
+
+  function getOverview() {
+    var c = $('body').attr('data-connect');
+    var t = $('body').attr('data-type');
+    var s = $('body').attr('data-s');
+
+    $('#result').removeClass();
+
+    $('#result').addClass('res-' + c + '-' + t);
+
+    return '.' + c + '-' + t + '-' + s;
+  }
+  // PRELOADER
+  //
+  //
+  var queue = new createjs.LoadQueue(),
+    $progress = $('#progress'),
+    $progressbar = $('#progressbar .bar');
+
+
+
+
+  queue.loadManifest([
+    { id: '1', src: '../images/overview-internet-kabel-full.png' },
+    { id: '2', src: '../images/overview-internet-lan-full.png' },
+    { id: '3', src: '../images/overview-internet-powerline-full.png' },
+    { id: '4', src: '../images/overview-satellit-kabel-full.png' },
+    { id: '5', src: '../images/overview-satellit-lan-full.png' },
+    { id: '6', src: '../images/overview-satellit-powerline-full.png' },
+    { id: '7', src: '../images/overview-internet-kabel-mobile.png' },
+    { id: '8', src: '../images/overview-internet-lan-mobile.png' },
+    { id: '9', src: '../images/overview-internet-powerline-mobile.png' },
+    { id: '10', src: '../images/overview-satellit-kabel-mobile.png' },
+    { id: '11', src: '../images/overview-satellit-lan-mobile.png' },
+    { id: '12', src: '../images/overview-satellit-powerline-mobile.png' },
+    { id: '13', src: '../images/steps-01-00-router.png' },
+    { id: '15', src: '../images/steps-mobile-01-00-router.png' },
+    { id: '16', src: '../images/steps-02-00-computer.png' },
+    { id: '17', src: '../images/steps-mobile-02-00-computer.png' },
+    { id: '18', src: '../images/steps-03-00-telefon.png' },
+    { id: '19', src: '../images/steps-mobile-03-00-telefon.png' },
+    { id: '20', src: '../images/steps-04--01-04-receiver.png' },
+    { id: '21', src: '../images/steps-mobile-04--01-04-receiver.png' },
+    { id: '22', src: '../images/steps-04--02-receiver.png' },
+    { id: '23', src: '../images/steps-mobile-04--02-receiver.png' },
+    { id: '24', src: '../images/steps-04--03-receiver.png' },
+    { id: '25', src: '../images/steps-mobile-04--03-receiver.png' },
+    { id: '26', src: '../images/steps-04--05-receiver.png' },
+    { id: '27', src: '../images/steps-mobile-04--05-receiver.png' },
+    { id: '28', src: '../images/steps-04--06-receiver.png' },
+    { id: '29', src: '../images/steps-mobile-04--06-receiver.png' }
+
+  ]);
+
+
+
+  function onComplete() {
+    $('#preloaderwrap').remove();
+    $('#welcome').velocity('fadeIn', 350);
+  }
+
+  function onError() {
+  }
+
+  function onFileLoad() {
+  }
+  function onFileProgress() {
+    //console.log('File progress', event);
+  }
+
+  function onProgress(event) {
+    var progress = Math.round(event.loaded * 100);
+
+    //console.log('General progress', Math.round(event.loaded) * 100, event);
+    $progress.text(progress + '%');
+    $progressbar.css({
+      'width': progress + '%'
+    });
+  }
+
+
+
+  queue.on('complete', onComplete);
+  queue.on('error', onError);
+  queue.on('fileload', onFileLoad);
+  queue.on('fileprogress', onFileProgress);
+  queue.on('progress', onProgress);
+  // PRELOADER - end
+
+
+
+
+  enquire.register('screen and (min-width:47.5em)', {
+    match: function() {
+      $('body').attr('data-s', 'full');
+      // currentOverview = 'internet-kabel-full'  // only last part change, after last -
+      $('#result .overview img').velocity('transition.flipXOut', {
+        queue: false,
+        complete: function() {
+          $(getOverview()).velocity('transition.flipXIn', {delay: 50});
+        }
+      });
+    },
+
+    unmatch: function() {
+      $('body').attr('data-s', 'mobile');
+      $('#result .overview img').velocity('transition.flipXOut', {
+        queue: false,
+        complete: function() {
+          $(getOverview()).velocity('transition.flipXIn', {delay: 50});
+        }
+      });
+    }
+  }, true);
+
+  //
   var n = $('#query .query').length;
   for (var i = 0; i < n; i++) {
     $('.status-indicator-wrapper ul').append('<li></li>');
@@ -12,18 +134,77 @@ $(document).ready(function() {
 
   var currentResultBox = 0;
 
+
+  function scrollViewTo(to) {
+    var t = to;
+    if ($('body').attr('data-connect') === 'internet' && to === 5) {
+      t = to + 1;
+    }
+    $('#result .box').eq(t).velocity('scroll', { duration: 500, easing: 'easeOut', offset: -50 });
+    if (to >= $('#result .box').length - 1) {
+      currentResultBox = -1;
+    }
+    console.log('scrolling', to, $('#result .box').length, $('#result .box').eq(to));
+  }
+
+  $('.hotspots li').on('mouseover', function() {
+    $(this).velocity(
+      {
+        scale: 1.5
+      }, 350, [80, 10]
+    );
+  });
+  $('.hotspots li').on('mouseout', function() {
+    $(this).velocity({scale: 1}, {
+      duration: 350
+    });
+
+  });
+
+  $('.hotspots li').on('click', function() {
+    console.log($(this).index());
+    currentResultBox = $(this).index() + 1;
+    scrollViewTo(currentResultBox);
+  });
+
+
   function startQuery() {
     $('#welcome').velocity('fadeOut', { duration: 350 });
-    $('#query').velocity('fadeIn', { delay: 348, duration: 10 });
-    $('#query1 h2').velocity('fadeIn', { delay: 350, duration: 300 });
-    $('#query1 .box').velocity('transition.flipXIn', { stagger: 150, delay: 350, duration: 350, display: '' });
+  }
+
+  function hideHotspots() {
+    $('li.hs').velocity('fadeOut', { duration: 150 });
+  }
+  function showHotspots() {
+    console.log('showing');
+    $('li.hs').velocity('transition.bounceIn', { delay: 100, duration: 350, stagger: 100 });
   }
 
   $('.subcats li a').on('click', function(e) {
     e.preventDefault();
-    $('.subcats li').removeClass('active');
-    $(this).parent().addClass('active');
-  });
+    if(!$(this).parent().hasClass('active')) {
+      $('.subcats li').removeClass('active');
+      $(this).parent().addClass('active');
+      $('body').attr( 'data-type', $(this).attr('data-connect') );
+
+      $('#result .overview img').velocity('transition.flipXOut', {
+        queue: false,
+        complete: function() {
+          $(getOverview()).velocity('transition.flipXIn',
+            {
+              delay: 50,
+              complete: function() {
+                showHotspots();
+              }
+            }
+          );
+        }
+      });
+
+      hideHotspots();
+
+    }
+});
 
 
 
@@ -55,19 +236,13 @@ $(document).ready(function() {
       display: 'none',
       complete: function() {
         $('#result').css('display', 'block');
+        $('#result .overview img').hide();
+        $(getOverview()).velocity('transition.flipXIn', {});
         $('#result .box').velocity('transition.flipXIn', { stagger: 150, delay: 50, display: 'block'});
       }
     });
     $('body').velocity('scroll', { duration: 1500, easing: 'easeOut' });
   }
-
-  $('.stepper a').on('click', function() {
-    currentResultBox++;
-    $('#result .box').eq(currentResultBox).velocity('scroll', { duration: 500, easing: 'easeOut' });
-    if (currentResultBox >= $('#result .box').length - 1) {
-      currentResultBox = -1;
-    }
-  });
 
 
   $('#start-query').on('click', function(e) {
@@ -78,6 +253,7 @@ $(document).ready(function() {
   $('.query .box a').on('click', function(e) {
     e.preventDefault();
     var $query = $(this).closest('.query');
+    $('body').attr( 'data-connect', $(this).attr('data-a') );
     if ($query.is($('.query:last'))) {
       showResult(this);
     } else {

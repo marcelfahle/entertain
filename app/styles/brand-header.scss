@@ -212,7 +212,8 @@
           }
         }
         a:hover {
-          background: #ededed;
+          //background: #ededed;
+          text-decoration: underline;
         }
         a:active {
           background: #d9d9d9;
@@ -274,7 +275,7 @@
       position: absolute;
       width: 100%;
       height: 100vh;
-      z-index: 1000;
+      z-index: 9900;
       padding-top: 20px;
       top: 73px;
 
@@ -299,6 +300,7 @@
   }
   nav.small-nav.show {
     .small-menu-trigger {
+      z-index: 9990;
       img.img-menu { display: none; }
       img.img-cancel { display: inline; }
     }
