@@ -609,6 +609,7 @@ main {
         max-width: 340px;
         margin-right: 0;
         vertical-align:top;
+        display: inline-table;
       }
     }
   }
@@ -666,12 +667,12 @@ body #result.powerline .box {
 #result.res-satellit-powerline .box .head-satellit-powerline { display: block; }
 
 #result .box .copyf { display: none; }
-#result.res-internet-kabel .box     .copy-internet-kabel { display: block; }
-#result.res-internet-lan .box       .copy-internet-lan { display: block; }
-#result.res-internet-powerline .box .copy-internet-powerline { display: block; }
-#result.res-satellit-kabel .box     .copy-satellit-kabel { display: block; }
-#result.res-satellit-lan .box       .copy-satellit-lan { display: block; }
-#result.res-satellit-powerline .box .copy-satellit-powerline { display: block; }
+#result.res-internet-kabel .box     .copy-internet-kabel { display: inline-table; }
+#result.res-internet-lan .box       .copy-internet-lan { display: inline-table; }
+#result.res-internet-powerline .box .copy-internet-powerline { display: inline-table; }
+#result.res-satellit-kabel .box     .copy-satellit-kabel { display: inline-table; }
+#result.res-satellit-lan .box       .copy-satellit-lan { display: inline-table; }
+#result.res-satellit-powerline .box .copy-satellit-powerline { display: inline-table; }
 
 #result.res-internet-kabel .step5a { display: none !important; }
 #result.res-internet-lan .step5a { display: none !important; }
